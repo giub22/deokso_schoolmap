@@ -67,6 +67,8 @@
 <script>
   let gm1ClickCount = 0;
   let gm1ClickTimer = null;
+  let sm2ClickCount = 0;
+  let sm2ClickTimer = null;
   let currentBuilding = 'gm';
   let scale = 1;
   let translateX = 0;
@@ -103,18 +105,33 @@
   function changeFloor(floor) {
     let src = '';
     
-    // 이스터에그: 근면관 1층 10번 클릭
+    // 이스터에그: 근면관 1층 5번 클릭
     if (currentBuilding === 'gm' && floor === 1) {
     gm1ClickCount++;
 
     if (gm1ClickTimer) clearTimeout(gm1ClickTimer);
     gm1ClickTimer = setTimeout(() => {
       gm1ClickCount = 0;
-    }, 5000); // 5초 내 연속 클릭 유지
+    }, 5000);
 
-    if (gm1ClickCount >= 10) {
+    if (gm1ClickCount >= 5) {
       alert("~덕소고등학교 3학년 학년 특색 활동 by. 다현, 수민, 승원, 현서, 지윤, 나영~");
       gm1ClickCount = 0;
+    }
+  }
+
+    // 이스터에그: 소망관 2층 10번 클릭
+    if (currentBuilding === 'sm' && floor === 2) {
+    sm2ClickCount++;
+
+    if (sm2ClickTimer) clearTimeout(sm2ClickTimer);
+    sm2ClickTimer = setTimeout(() => {
+      sm2ClickCount = 0;
+    }, 5000);
+
+    if (sm2ClickCount >= 10) {
+      alert("~이거 본 사람 로또 당첨~");
+      sm2ClickCount = 0;
     }
   }
     
