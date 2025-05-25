@@ -262,7 +262,7 @@
       if (e.touches.length === 2 && initialPinchDistance) {
         const newDistance = getPinchDistance(e.touches);
         const ratio = newDistance / initialPinchDistance;
-        scale = Math.max(0.5, Math.min(4, initialScale * ratio));
+        scale = Math.max(0.1, Math.min(4, initialScale * ratio));
         updateTransform();
       } else if (e.touches.length === 1 && isDragging) {
         translateX = lastX + (e.touches[0].clientX - startX);
